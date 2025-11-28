@@ -1,0 +1,47 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <h2><%= book.title %> by <%= book.author %></h2>
+    <p>Genre: <%= book.genre %></p>
+    <p><%= book.description %></p>
+
+    <hr>
+    <h3>Reviews</h3>
+
+    <% if (book.reviews.length === 0) { %>
+        <p>No reviews yet.</p>
+    <% } else { %>
+        <% let guestCounter = 1; %>
+        <% book.reviews.forEach(review => { %>
+            <div class="review-item">
+                <strong><%= review.user ? review.user.username : 'Guest ' + guestCounter++ %></strong>
+                rated <%= review.rating %>/5
+                <p><%= review.comment %></p>
+            </div>
+        <% }) %>
+    <% } %>
+
+    <hr>
+ <h3>Add a Review</h3>
+<form action="/books/<%= book._id %>/review" method="POST" class="review-form">
+
+    <label for="rating">Rating (1-5):</label>
+    <select name="rating" id="rating" required>
+        <option value="" disabled selected>Select rating</option>
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Good</option>
+        <option value="4">4 - Very Good</option>
+        <option value="5">5 - Excellent</option>
+    </select>
+
+    <label>Comment:</label>
+    <textarea name="comment" placeholder="Write your review here..." required></textarea>
+    <br>
+    <button type="submit">Submit Review</button>
+</form>
+
+
+<%- include('../partials/footer') %>

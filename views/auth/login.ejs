@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-page">
+        <!-- Left side info -->
+        <div class="auth-left">
+            <h1>Book Review Platform</h1>
+            <p>Discover books, leave reviews, and check ratings from readers worldwide.</p>
+        </div>
+
+        <!-- Right side login form -->
+        <div class="auth-right">
+            <div class="auth-card">
+                <h2 class="auth-title">Login</h2>
+
+                <% if (error) { %>
+                    <div class="alert error"><%= error %></div>
+                <% } %>
+
+                <form action="/auth/login" method="POST" class="auth-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn">Login</button>
+                </form>
+
+                <div class="auth-link">
+                    Don't have an account? <a href="/auth/register">Register here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

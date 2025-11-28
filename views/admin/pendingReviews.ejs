@@ -1,0 +1,43 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+
+    <h2>Pending Reviews</h2>
+
+    <% if (reviews.length === 0) { %>
+        <p>No pending reviews.</p>
+    <% } else { %>
+        <table class="review-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Book</th>
+                    <th>Rating</th>
+                    <th>Comment</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% reviews.forEach(review => { %>
+                    <tr>
+                        <td><%= review.username %></td>
+                        <td><%= review.book.title %></td>
+                        <td><%= review.rating %></td>
+                        <td><%= review.comment %></td>
+                        <td>
+                            <form method="POST" action="/books/admin/reviews/<%= review._id %>/approve" style="display:inline;">
+                                <button type="submit" class="btn approve-btn">Approve</button>
+                            </form>
+                            <form method="POST" action="/books/admin/reviews/<%= review._id %>/delete" style="display:inline;">
+                                <button type="submit" class="btn delete-btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } %>
+
+</div>
+
+<%- include('../partials/footer') %>

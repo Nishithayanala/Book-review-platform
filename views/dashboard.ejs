@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <h1>Welcome, <%= user.username %>!</h1>
+    <p><a href="/add-book">Add Book</a> | <a href="/logout">Logout</a></p>
+</header>
+
+<div class="container">
+    <h2>Books</h2>
+    <% books.forEach(book => { %>       <div class="book-card">
+            <h3><%= book.title %></h3>
+            <p><strong>Author:</strong> <%= book.author %> | <strong>Genre:</strong> <%= book.genre %></p>
+            <form action="/add-review/<%= book._id %>" method="POST">
+                <input type="text" name="comment" placeholder="Add a comment" required>
+                <input type="number" name="rating" placeholder="Rating (1-5)" min="1" max="5" required>
+                <button type="submit">Submit Review</button>
+            </form>
+            <h4>Reviews:</h4>
+            <% book.reviews.forEach(r => { %>
+                <div class="review">
+                    <strong><%= r.user %>:</strong> <%= r.comment %> (Rating: <%= r.rating %>)
+                </div>
+            <% }) %>
+        </div>
+    <% }) %>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<div class="container">
+    <h2>Welcome to the Book Review Platform</h2>
+    <p>Discover books, leave reviews, and check ratings.</p>
+
+    <div class="home-links">
+        <a href="/books" class="btn">View All Books</a>
+        <% if(user.isAdmin){ %>
+            <a href="/books/add" class="btn">Add New Book</a>
+            <a href="/books/admin/reviews/pending" class="btn">Pending Reviews</a>
+        <% } %>
+    </div>
+
+    <div class="home-info">
+        <h3>Features:</h3>
+        <ul>
+            <li>Search books by author or genre</li>
+            <li>Leave ratings and comments on books</li>
+            <li>Admin can approve or delete reviews</li>
+        </ul>
+    </div>
+</div>
+<h2>Welcome, <%= username %>!</h2>
+<p>You are logged in successfully.</p>
+<a href="/auth/logout">Logout</a>
+
+
+
+<%- include('partials/footer') %>

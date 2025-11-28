@@ -1,0 +1,8 @@
+<nav>
+    <a href="/">Home</a>
+    <% if (user && user.isAdmin) { %>
+        <a href="/books/add">➕ Add New Book</a>
+        <a href="/admin/reviews/pending">📝 Pending Reviews</a>
+    <% } %>
+</nav>
+<hr>

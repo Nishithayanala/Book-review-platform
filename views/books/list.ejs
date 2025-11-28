@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+
+    <h2>Book List</h2>
+
+    <!-- Single search input for author or genre -->
+    <form method="GET" action="/books" class="search-form">
+        <input type="text" name="query" placeholder="Search by author or genre" value="<%= search.query %>">
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Book List -->
+    <% if (books.length === 0) { %>
+        <p>No books found.</p>
+    <% } else { %>
+        <ul class="book-list">
+            <% books.forEach(book => { %>
+                <li class="book-item">
+                    <a href="/books/<%= book._id %>"><%= book.title %></a>
+                    by <span class="book-author"><%= book.author %></span>
+                    (<span class="book-genre"><%= book.genre %></span>)
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+</div>
+
+<%- include('../partials/footer') %>

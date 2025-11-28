@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= book.title %> Details</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/books/add">Add New Book</a> |
+        <a href="/admin/reviews/pending">Pending Reviews</a>
+    </nav>
+
+    <div class="book-info">
+        <h2><%= book.title %></h2>
+        <p><strong>Author:</strong> <%= book.author %></p>
+        <p><strong>Genre:</strong> <%= book.genre %></p>
+        <p><strong>Description:</strong> <%= book.description %></p>
+    </div>
+
+    <div class="reviews-section">
+        <h3>Reviews</h3>
+        <% if (reviews.length === 0) { %>
+            <p>No reviews yet.</p>
+        <% } else { %>
+            <% reviews.forEach(review => { %>
+                <div class="review-card">
+                    <span class="review-user"><%= review.user %></span>
+                    <span class="review-rating">
+                        <% for(let i=0; i<review.rating; i++) { %> &#9733; <% } %>
+                        <% for(let i=review.rating; i<5; i++) { %> &#9734; <% } %>
+                    </span>
+                    <p class="review-comment"><%= review.comment %></p>
+                </div>
+            <% }) %>
+        <% } %>
+    </div>
+
+    <div class="review-form">
+        <h3>Submit Review</h3>
+        <form method="POST" action="/books/<%= book._id %>/review">
+            <input type="number" name="rating" min="1" max="5" placeholder="Rating (1–5)" required>
+            <textarea name="comment" rows="3" placeholder="Write your comment..." required></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+</body>
+</html>

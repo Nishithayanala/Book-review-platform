@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login / Register</title>
+    <style>
+        .tab { display: inline-block; margin-right: 20px; cursor: pointer; font-weight: bold; }
+        .active { text-decoration: underline; }
+        .form-container { margin-top: 20px; }
+        .hidden { display: none; }
+    </style>
+    <script>
+        function showForm(form) {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('registerForm').classList.add('hidden');
+            document.getElementById(form).classList.remove('hidden');
+
+            document.getElementById('loginTab').classList.remove('active');
+            document.getElementById('registerTab').classList.remove('active');
+            document.getElementById(form + 'Tab').classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <span id="loginTab" class="tab active" onclick="showForm('loginForm')">Login</span>
+        <span id="registerTab" class="tab" onclick="showForm('registerForm')">Register</span>
+    </div>
+
+    <div class="form-container">
+        <form id="loginForm" action="/login" method="POST">
+            <h2>Login</h2>
+            Email: <input type="email" name="email" required><br>
+            Password: <input type="password" name="password" required><br>
+            <button type="submit">Login</button>
+        </form>
+
+        <form id="registerForm" action="/register" method="POST" class="hidden">
+            <h2>Register</h2>
+            Username: <input type="text" name="username" required><br>
+            Email: <input type="email" name="email" required><br>
+            Password: <input type="password" name="password" required><br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+</html>

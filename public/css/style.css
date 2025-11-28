@@ -1,0 +1,909 @@
+/* ---------------------- General Styles ---------------------- #7798c5; */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #7798c5;
+    margin: 0;
+    padding: 0;
+    color: #0a090c;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+/* ---------------------- Header & Navigation ---------------------- */
+header {
+    background-color:  #7798c5;
+    color: white;
+    padding: 20px 0;
+    position: relative; /* allow nav positioning */
+    text-align: center; /* center the title */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* Position nav links to top-right without breaking header title */
+
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------------- Footer ---------------------- */
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f1f1f1;
+    color: #7798c5;
+    border-top: 1px solid #ddd;
+}
+
+/* ---------------------- Forms ---------------------- */
+form input[type="text"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 5px 0 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+form button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------- Buttons ---------------------- */
+.btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------- Lists ---------------------- */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.book-list li,
+.book-item,
+.review-item,
+.home-info ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.book-list li a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #1c3894c7;
+}
+
+.book-list li a:hover {
+    text-decoration: underline;
+}
+
+.book-author, .book-genre {
+    font-style: italic;
+}
+
+/* ---------------------- Book Details & Reviews ---------------------- */
+.review-item {
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+.review-item strong {
+    font-weight: bold;
+}
+
+.pending-review {
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px dashed #ff0000;
+    border-radius: 4px;
+    background-color: #fff5f5;
+}
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.review-table th,
+.review-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.review-table th {
+    background-color: #f5f5f5;
+}
+
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+}
+
+.review-form input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    border: 2px solid #333;
+}
+
+.review-form input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    border: 2px solid #333;
+}
+
+#ratingValue {
+    font-weight: bold;
+    margin-left: 5px;
+    color: #4CAF50;
+}
+
+.approve-btn {
+    background-color: #28a745;
+}
+
+.approve-btn:hover {
+    background-color: #218838;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+/* ---------------------- Search Form ---------------------- */
+.search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.search-form button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: none;
+    background-color: #1c3894c7;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------- Home Page ---------------------- */
+.home-links {
+    margin: 15px 0;
+}
+
+.home-links a {
+    margin-right: 10px;
+}
+
+.home-info {
+    margin-top: 20px;
+}
+
+.home-info h3 {
+    margin-bottom: 5px;
+}
+
+.home-info ul {
+    list-style: disc inside;
+}
+/* Pending Reviews Table Styling */
+.pending-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pending-table th,
+.pending-table td {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.pending-table th {
+    background-color: #0d364b;
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+.pending-table tr:nth-child(even) {
+    background-color: #7798c5;
+}
+
+
+/* Approve / Delete buttons */
+.pending-table button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.pending-table .approve-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+.pending-table .approve-btn:hover {
+    background-color: #1e8449;
+}
+
+.pending-table .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.pending-table .delete-btn:hover {
+    background-color: #c0392b;
+}
+/* Manage Books Table Styling */
+.manage-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.manage-table th,
+.manage-table td {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.manage-table th {
+    background-color: #34495e;
+    color: #ecf0f1;
+    font-weight: bold;
+}
+
+.manage-table tr:nth-child(even) {
+    background-color:  #7798c5;
+}
+
+
+
+/* Delete button */
+.manage-table button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.manage-table .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.manage-table .delete-btn:hover {
+    background-color: #c0392b;
+}
+
+
+/* ---------------------- Auth Page Styling ---------------------- */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg,  #7798c5, #7798c5);
+}
+
+.auth-card {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.auth-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 600;
+}
+
+.auth-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #555;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border-color:  #7798c5;
+    outline: none;
+}
+
+.btn.primary-btn {
+    background-color:  #7798c5;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* remove hover */
+.btn.primary-btn:hover {
+    background-color: #0078d4;
+}
+
+/* Error alert */
+.alert.error {
+    background: #ffe5e5;
+    border: 1px solid #ff4d4d;
+    color: #d8000c;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Auth link */
+.auth-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: #7798c5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* remove hover underline */
+.auth-link a:hover {
+    text-decoration: none;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* General header styling */
+header {
+    background-color: #333; /* Dark blue background */
+    color: #ffffff;             /* White text */
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Flexbox for nav */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Left, center, right sections */
+.nav-left a,
+.nav-center a,
+.nav-right a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    margin-right: 15px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-left a:last-child,
+.nav-center a:last-child,
+.nav-right a:last-child {
+    margin-right: 0;
+}
+
+/* Center Home link */
+.nav-center {
+    text-align: center;
+    flex: 1; /* Take remaining space */
+}
+
+.nav-center a {
+    display: inline-block;
+    background-color: #1c3894c7;
+    color: #ffffff;
+}
+
+/* Hover effect */
+.nav-left a:hover,
+.nav-center a:hover,
+.nav-right a:hover {
+    background-color: #464342;
+    color: #ffffff;
+}
+
+/* Logout button styling */
+.logout-btn {
+    background-color: #666262; /* Red logout button */
+    color: #fff;
+}
+
+/* Optional: admin links slightly lighter */
+.nav-left a {
+    background-color: #85afe9;/* Slightly lighter blue */
+}
+
+/* Add spacing for nav items */
+.nav-left a, .nav-right a {
+    margin: 0 5px;
+}
+
+
+/* Header */
+header {
+    background-color:  #7798c5;
+    color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* Nav bar flex layout */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left + center links */
+.nav-left-center a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #3a5a75;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.nav-left-center a.home-link {
+    background-color: #ff6e40;
+}
+
+.nav-left-center a:hover {
+    background-color: #ff4500;
+}
+
+/* Right link (Logout) */
+.nav-right a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #1c3894c7;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.nav-right a:hover {
+    background-color: #ff6e40;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .nav-left-center a,
+    .nav-right a {
+        margin: 5px 0;
+    }
+}
+/* ---------------------- Book Details Card ---------------------- */
+.book-details-card, .container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+/* Title & Genre */
+.book-details-card h2, .container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #08355c;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.book-details-card p, .container p {
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+}
+
+.book-details-card p:first-of-type {
+    font-style: italic;
+    text-align: center;
+    color: #555;
+}
+
+/* ---------------------- Reviews ---------------------- */
+.review-item {
+    background-color: #f9f9f9;
+    border-left: 4px solid #007BFF;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+}
+
+.review-item strong {
+    color: #007BFF;
+    font-size: 16px;
+}
+
+/* ---------------------- Add Review Form ---------------------- */
+.review-form {
+    background-color: #f1f8ff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.review-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.review-form select, 
+.review-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.review-form button {
+    margin-top: 15px;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background-color: #0056b3;
+}
+
+/* ---------------------- Section Headers ---------------------- */
+h3 {
+    color: #08355c;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Login prompt */
+.login-prompt {
+    text-align: center;
+    font-style: italic;
+    color: #555;
+}
+
+.login-prompt a {
+    color: #1c3894c7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Book Details Card */
+.book-details {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.book-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #08355c;
+}
+
+.book-genre {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.book-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Reviews */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.review-item {
+    background-color: #f5f7fa;
+    border-left: 5px solid #7798c5;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.review-item p {
+    margin: 5px 0;
+}
+
+.review-item strong {
+    color: #040404;
+}
+
+/* Add Review Form */
+.review-form {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.review-form h3 {
+    margin-bottom: 15px;
+    color: #08355c;
+}
+
+.review-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Submit Button */
+.review-form button {
+    background-color: #08355c;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.review-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .book-details, .review-form {
+        padding: 20px;
+    }
+}
+/* ---------------------- Section Headers ---------------------- */
+h3 {
+    color: #08355c;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    /* Remove the underline effect */
+    border-bottom: none; 
+    display: block;
+    padding-bottom: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* ---------------------- Auth Page ---------------------- */
+.auth-page {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ---------------------- Left side info ---------------------- */
+.auth-left {
+    flex: 1;
+    background-color: #7798c5; /* soft blue */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.auth-left h1 {
+    font-family: 'Playfair Display', serif; /* stylish heading */
+    font-size: 48px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* subtle shadow */
+}
+
+.auth-left p {
+    font-family: 'Montserrat', sans-serif; /* modern paragraph */
+    font-size: 18px;
+    line-height: 1.8;
+    color: #fefcfc; /* lighter for contrast */
+    max-width: 450px; /* keeps text readable */
+}
+
+/* ---------------------- Right side login form ---------------------- */
+.auth-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7798c5;/* soft light background */
+    padding: 40px;
+}
+
+/* ---------------------- Login Card ---------------------- */
+.auth-card {
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* ---------------------- Responsive ---------------------- */
+@media (max-width: 768px) {
+    .auth-page {
+        flex-direction: column;
+    }
+
+    .auth-left, .auth-right {
+        flex: unset;
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .auth-left {
+        order: 2;
+    }
+
+    .auth-right {
+        order: 1;
+    }
+}

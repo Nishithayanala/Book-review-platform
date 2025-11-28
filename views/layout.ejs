@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= typeof title !== 'undefined' ? title : "Book Review Platform" %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav>
+        <% if (user) { %>
+            <span>Welcome, <%= user.username %>!</span>
+            <a href="/auth/logout">Logout</a>
+            <a href="/books">Book List</a>
+            <% if(user.isAdmin) { %>
+                <a href="/admin/reviews/pending">Pending Reviews</a>
+            <% } %>
+        <% } else { %>
+            <a href="/auth/login">Login</a>
+            <a href="/auth/register">Register</a>
+        <% } %>
+    </nav>
+
+    <div class="container">
+        <%- body %>
+    </div>
+</body>
+</html>
